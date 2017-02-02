@@ -20,6 +20,9 @@ public class Tarjeta {
         this.tipo = "";
 
     }
+    public Tarjeta(int id){
+        this.id=id;
+    }
     
     /**
      *
@@ -43,6 +46,31 @@ public class Tarjeta {
      */
     public String getMarca() {
         return marca;
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 3;
+        hash = 19 * hash + this.id;
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Tarjeta other = (Tarjeta) obj;
+        if (this.id != other.id) {
+            return false;
+        }
+        return true;
     }
 
     /**
@@ -106,4 +134,6 @@ public class Tarjeta {
         
         return sb.toString();
     }
+
+    
 }
