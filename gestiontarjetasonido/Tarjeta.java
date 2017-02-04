@@ -13,7 +13,7 @@ public class Tarjeta {
     private String tipo;
     private String marca;
     private double precio;
-    private int id;
+    private int id=0;
     
     
     public Tarjeta(){
@@ -22,6 +22,13 @@ public class Tarjeta {
     }
     public Tarjeta(int id){
         this.id=id;
+    }
+    
+    public Tarjeta(String tipo,String marca,double precio){
+        id++;
+        this.marca=marca;
+        this.tipo=tipo;
+        this.precio=precio;
     }
     
     /**
